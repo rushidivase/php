@@ -8,8 +8,26 @@ if (isset($_POST["submitbtn"])) {
     $salary = $_POST['salary'];
     $mono = $_POST['mono'];
 
-    $query = "insert into employee(name, age, salary, mono) values('$name', '$age', '$salary', '$mono')";
-    $run = mysqli_query($con, $query);
+    $image_name = $_FILES['ImageUpload']['name'];
+    $image_size = $_FILES['ImageUpload']['size'];
+    $image_type = $_FILES['ImageUpload']['type'];
+    $temp_name = $_FILES['ImageUpload']['tmp_name'];
+
+    $folder = "Images/";
+
+    if ($image_size <= 1000000) //1mb
+    {
+        $folder = "Images/" . $image_name;
+        $query = "insert into employee(name, age, salary, mono, image_path) values('$name', '$age', '$salary', '$mono', '$folder')";
+        $result = mysqli_query($con, $query);
+        if ($result)
+        {
+            move_uploaded_file($temp_name, $folder);
+        } else
+        {
+            echo "Failed..!";
+        }
+    }
 }
 
 
@@ -28,7 +46,7 @@ if (isset($_POST["submitbtn"])) {
 <body>
     <div class="col-5 offset-4 mt-3 border shadow p-3">
         <h3 class="fs-3 text-center">Insert Record</h3>
-        <form action="#" method="post">
+        <form action="#" method="post" enctype="multipart/form-data">
             Enter Name:
             <input type="text" name="name"><br><br>
 
@@ -40,6 +58,9 @@ if (isset($_POST["submitbtn"])) {
 
             Enter Mobile No:
             <input type="text" name="mono"><br><br>
+
+            Upload Image:
+            <input type="file" name="ImageUpload" required><br><br>
 
             <input type="submit" value="insert" class="btn btn-info w-100" name="submitbtn">
         </form>

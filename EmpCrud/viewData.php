@@ -47,7 +47,7 @@ function btn()
 </head>
 
 <body>
-    <div class="col-8 offset-2 mt-3 border shadow p-4">
+    <div class="col-9 offset-1 mt-3 border shadow p-4">
         <h3 class="display-6 text-center"> Employee Data</h3>
         <?php
         echo btn();
@@ -59,9 +59,8 @@ function btn()
                 <th>Age</th>
                 <th>Salary</th>
                 <th>Mobile No</th>
-                <th>Actions
-
-                </th>
+                <th>Image</th>
+                <th>Actions</th>
             </tr>
             <?php
             while ($data = mysqli_fetch_assoc($run)) {
@@ -73,6 +72,7 @@ function btn()
                     <td>" . $data['age'] . "</td>
                    <td>" . $data['salary'] . "</td>
                     <td>" . $data['mono'] . "</td>
+                    <td> <img src='".$data['image_path']."' height='150' width='150'></td>
                     <td>
                     <a href='delete.php?id=$data[eid]' class='btn btn-danger' onclick='return Confirmation()'>Delete</a>
                   <a href='update.php?id=$data[eid]' class='btn btn-success'>Update</a>
