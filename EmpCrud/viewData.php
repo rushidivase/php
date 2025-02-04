@@ -49,6 +49,7 @@ function btn()
 <body>
     <div class="col-9 offset-1 mt-3 border shadow p-4">
         <h3 class="display-6 text-center"> Employee Data</h3>
+        <a class="btn btn-outline-danger mb-2" href="logout.php">Logout</a>
         <?php
         echo btn();
         ?>

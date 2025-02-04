@@ -47,20 +47,18 @@ if (isset($_POST["submitbtn"])) {
     <div class="col-5 offset-4 mt-3 border shadow p-3">
         <h3 class="fs-3 text-center">Insert Record</h3>
         <form action="#" method="post" enctype="multipart/form-data">
-            Enter Name:
-            <input type="text" name="name"><br><br>
+            <input type="text" name="name" placeholder="Enter Name:" class="form-control mt-2 mb-2">
 
-            Enter Age:
-            <input type="text" name="age"><br><br>
+            <input type="text" name="age" placeholder="Enter Age:" class="form-control mb-2">
 
-            Enter Salary:
-            <input type="text" name="salary"><br><br>
+       
+            <input type="text" name="salary" placeholder="Enter Salary:" class="form-control mb-2">
 
-            Enter Mobile No:
-            <input type="text" name="mono"><br><br>
+        
+            <input type="text" name="mono" placeholder="Enter Mobile Number:" class="form-control mb-2">
 
             Upload Image:
-            <input type="file" name="ImageUpload" required><br><br>
+            <input type="file" name="ImageUpload" required class="form-control mb-2">
 
             <input type="submit" value="insert" class="btn btn-info w-100" name="submitbtn">
         </form>

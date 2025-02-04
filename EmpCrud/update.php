@@ -22,22 +22,25 @@ include("/xampp/htdocs/EmpCrud/db/dbconnection.php");
 
     <div class="col-5 offset-4 mt-3 border shadow p-3">
         <h3 class="fs-3 text-center">update Record</h3>
-        <form action="#" method="post">
-            Id:
-            <input type="text" name="id" value="<?php echo $data[0] ?>" readonly><br><br>
-            Enter Name:
-            <input type="text" name="name" value="<?php echo $data[1] ?>"><br><br>
 
-            Enter Age:
-            <input type="text" name="age" value="<?php echo $data[2] ?>"><br><br>
+        <form action="#" method="post" enctype="multipart/form-data">
 
-            Enter Salary:
-            <input type="text" name="salary" value="<?php echo $data[3] ?>"><br><br>
+        <input type="text" class="form-control" name="id" value="<?php echo $data[0] ?>" readonly>
 
-            Enter Mobile No:
-            <input type="text" name="mono" value="<?php echo $data[4] ?>"><br><br>
+            <input type="text" name="name" value="<?php echo $data[1] ?>" placeholder="Enter Name:" class="form-control mt-2 mb-2" >
 
-            <input type="submit" value="Update" class="btn btn-info w-100" name="updatebtn">
+            <input type="text" name="age" value="<?php echo $data[2] ?>" placeholder="Enter Age:" class="form-control mb-2">
+
+       
+            <input type="text" name="salary" value="<?php echo $data[3] ?>" placeholder="Enter Salary:" class="form-control mb-2">
+
+        
+            <input type="text" name="mono" value="<?php echo $data[4] ?>" placeholder="Enter Mobile Number:" class="form-control mb-2">
+
+            Upload Image:
+            <input type="file" name="ImageUpload" required class="form-control mb-2">
+
+            <input type="submit" value="insert" class="btn btn-info w-100" name="submitbtn">
         </form>
 
 
